@@ -39,10 +39,10 @@ class NPKRequest {
     const parameters = this.action.parameters
 
     switch (actionName) {
-    case 'ThrowDiceAction' || 'ThrowYesAction':
+    case 'rolling_action':
       let diceCount = 1
       if (!!parameters) {
-        const diceCountSlot = parameters.diceCount
+        const diceCountSlot = parameters.num
         if (parameters.length != 0 && diceCountSlot) {
           diceCount = parseInt(diceCountSlot.value)
         }
@@ -71,9 +71,9 @@ class NPKResponse {
   setOutputParameters(throwResult) {
 
     this.output = {
-      diceCount: throwResult.diceCount,
+      //diceCount: throwResult.diceCount,
       sum: throwResult.sum,
-      midText: throwResult.midText,
+      //midText: throwResult.midText,
     }
   }
 
